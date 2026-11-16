@@ -30,9 +30,10 @@ public class Main {
              registerPassenger();
 
 
-           } else if (choice.equals("2")) {
-                System.out.println("Register is coming soon.");
-            } else {
+           } else if (choice.equals("1")) {
+    loginPassenger();
+}
+             else {
                 System.out.println("Please choose 0, 1, or 2.");
             }
         }
