@@ -53,6 +53,11 @@ public class Main {
     System.out.print("Username: ");
     String username = scanner.nextLine().trim();
 
+    if (!username.matches("[a-zA-Z0-9_]{3,}")) {
+    System.out.println("Username must contain at least 3 letters, numbers, or underscores.");
+    return;
+}
+
     System.out.print("Password: ");
     String password = scanner.nextLine().trim();
 
