@@ -1,8 +1,18 @@
+package motorcycletaxi;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import motorcycletaxi.model.Passenger;
+
 public class Main {
+
+    // Class variables (above main method)
+    private static final Scanner scanner = new Scanner(System.in);
+    private static ArrayList<Passenger> passengers = new ArrayList<>();
+    private static int nextPassengerId = 1;
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
         while (true) {
             System.out.println();
@@ -11,6 +21,7 @@ public class Main {
             System.out.println("2. Register");
             System.out.println("0. Exit");
             System.out.print("Choose: ");
+
             String choice = scanner.nextLine().trim();
 
             if (choice.equals("0")) {
