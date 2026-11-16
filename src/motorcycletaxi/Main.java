@@ -57,6 +57,12 @@ public class Main {
     System.out.println("Username must contain at least 3 letters, numbers, or underscores.");
     return;
 }
+for (Passenger p : passengers) {
+    if (p.getUsername().equalsIgnoreCase(username)) {
+        System.out.println("Username already exists.");
+        return;
+    }
+}
 
     System.out.print("Password: ");
     String password = scanner.nextLine().trim();
