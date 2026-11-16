@@ -26,9 +26,11 @@ public class Main {
 
             if (choice.equals("0")) {
                 break;
-            } else if (choice.equals("1")) {
-                System.out.println("Login is coming soon.");
             } else if (choice.equals("2")) {
+             registerPassenger();
+
+
+           } else if (choice.equals("2")) {
                 System.out.println("Register is coming soon.");
             } else {
                 System.out.println("Please choose 0, 1, or 2.");
@@ -66,7 +68,7 @@ for (Passenger p : passengers) {
 
     System.out.print("Password: ");
     String password = scanner.nextLine().trim();
-    
+
     if (password.length() < 4) {
     System.out.println("Password must be at least 4 characters.");
     return;
