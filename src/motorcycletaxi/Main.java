@@ -66,6 +66,11 @@ for (Passenger p : passengers) {
 
     System.out.print("Password: ");
     String password = scanner.nextLine().trim();
+    
+    if (password.length() < 4) {
+    System.out.println("Password must be at least 4 characters.");
+    return;
+}
 
     
 
