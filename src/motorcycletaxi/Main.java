@@ -38,4 +38,30 @@ public class Main {
         System.out.println("Goodbye!");
         scanner.close();
     }
+
+    public static void registerPassenger() {
+    System.out.println("\n=== PASSENGER REGISTRATION ===");
+
+    System.out.print("Full name: ");
+    String fullName = scanner.nextLine().trim();
+
+    System.out.print("Username: ");
+    String username = scanner.nextLine().trim();
+
+    System.out.print("Password: ");
+    String password = scanner.nextLine().trim();
+
+    Passenger passenger = new Passenger(
+        nextPassengerId,
+        fullName,
+        username,
+        password
+    );
+
+    passengers.add(passenger);
+    nextPassengerId++;
+
+    System.out.println("Registration successful!");
+}
+
 }
