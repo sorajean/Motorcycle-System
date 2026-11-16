@@ -41,6 +41,17 @@ public class Main {
         scanner.close();
     }
 
+public static void loginPassenger() {
+    System.out.println("\n=== PASSENGER LOGIN ===");
+
+    System.out.print("Username: ");
+    String username = scanner.nextLine().trim();
+
+    System.out.print("Password: ");
+    String password = scanner.nextLine().trim();
+
+    System.out.println("Checking login information...");
+}
     public static void registerPassenger() {
     System.out.println("\n=== PASSENGER REGISTRATION ===");
 
