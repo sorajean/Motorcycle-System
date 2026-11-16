@@ -12,4 +12,20 @@ public class Passenger {
         this.username = username;
         this.password = password;
     }
+
+        public int getId() {
+        return id;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
 }
