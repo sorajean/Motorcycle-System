@@ -50,7 +50,17 @@ public static void loginPassenger() {
     System.out.print("Password: ");
     String password = scanner.nextLine().trim();
 
-    System.out.println("Checking login information...");
+    for (Passenger p : passengers) {
+    if (p.getUsername().equalsIgnoreCase(username)
+            && p.getPassword().equals(password)) {
+
+        System.out.println("\nLogin successful!");
+        System.out.println("Welcome, " + p.getFullName() + "!");
+        return;
+    }
+}
+
+System.out.println("Invalid username or password.");
 }
     public static void registerPassenger() {
     System.out.println("\n=== PASSENGER REGISTRATION ===");
