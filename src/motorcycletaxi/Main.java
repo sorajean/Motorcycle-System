@@ -7,7 +7,7 @@ import motorcycletaxi.model.Passenger;
 
 public class Main {
 
-    // Class variables (above main method)
+    // Class variables
     private static final Scanner scanner = new Scanner(System.in);
     private static ArrayList<Passenger> passengers = new ArrayList<>();
     private static int nextPassengerId = 1;
@@ -26,14 +26,14 @@ public class Main {
 
             if (choice.equals("0")) {
                 break;
+
+            } else if (choice.equals("1")) {
+                loginPassenger();
+
             } else if (choice.equals("2")) {
-             registerPassenger();
+                registerPassenger();
 
-
-           } else if (choice.equals("1")) {
-    loginPassenger();
-}
-             else {
+            } else {
                 System.out.println("Please choose 0, 1, or 2.");
             }
         }
@@ -42,73 +42,109 @@ public class Main {
         scanner.close();
     }
 
-public static void loginPassenger() {
-    System.out.println("\n=== PASSENGER LOGIN ===");
+    // Passenger login method
+    public static void loginPassenger() {
 
-    System.out.print("Username: ");
-    String username = scanner.nextLine().trim();
+        System.out.println("\n=== PASSENGER LOGIN ===");
 
-    System.out.print("Password: ");
-    String password = scanner.nextLine().trim();
+        System.out.print("Username: ");
+        String username = scanner.nextLine().trim();
 
-    for (Passenger p : passengers) {
-    if (p.getUsername().equalsIgnoreCase(username)
-            && p.getPassword().equals(password)) {
+        System.out.print("Password: ");
+        String password = scanner.nextLine().trim();
 
-        System.out.println("\nLogin successful!");
-        System.out.println("Welcome, " + p.getFullName() + "!");
-        return;
+        for (Passenger p : passengers) {
+
+            if (p.getUsername().equalsIgnoreCase(username)
+                    && p.getPassword().equals(password)) {
+
+                System.out.println("\nLogin successful!");
+                System.out.println("Welcome, " + p.getFullName() + "!");
+
+                passengerDashboard(p);
+                return;
+            }
+        }
+
+        System.out.println("Invalid username or password.");
     }
-}
 
-System.out.println("Invalid username or password.");
-}
+    // Passenger dashboard method
+    public static void passengerDashboard(Passenger passenger) {
+
+        while (true) {
+            System.out.println();
+            System.out.println("=== PASSENGER DASHBOARD ===");
+            System.out.println("Welcome, " + passenger.getFullName() + "!");
+            System.out.println("1. Book a Ride");
+            System.out.println("2. View Account Information");
+            System.out.println("3. Logout");
+            System.out.print("Choose: ");
+
+            String choice = scanner.nextLine().trim();
+
+            if (choice.equals("1")) {
+                System.out.println("Ride booking is coming soon.");
+
+            } else if (choice.equals("2")) {
+                System.out.println("Account information is coming soon.");
+
+            } else if (choice.equals("3")) {
+                System.out.println("Logging out...");
+                break;
+
+            } else {
+                System.out.println("Please choose 1, 2, or 3.");
+            }
+        }
+    }
+
+    // Passenger registration method
     public static void registerPassenger() {
-    System.out.println("\n=== PASSENGER REGISTRATION ===");
 
-    System.out.print("Full name: ");
-    String fullName = scanner.nextLine().trim();
+        System.out.println("\n=== PASSENGER REGISTRATION ===");
 
-    if (fullName.isEmpty()) {
-    System.out.println("Full name cannot be empty.");
-    return;
-}
+        System.out.print("Full name: ");
+        String fullName = scanner.nextLine().trim();
 
-    System.out.print("Username: ");
-    String username = scanner.nextLine().trim();
+        if (fullName.isEmpty()) {
+            System.out.println("Full name cannot be empty.");
+            return;
+        }
 
-    if (!username.matches("[a-zA-Z0-9_]{3,}")) {
-    System.out.println("Username must contain at least 3 letters, numbers, or underscores.");
-    return;
-}
-for (Passenger p : passengers) {
-    if (p.getUsername().equalsIgnoreCase(username)) {
-        System.out.println("Username already exists.");
-        return;
+        System.out.print("Username: ");
+        String username = scanner.nextLine().trim();
+
+        if (!username.matches("[a-zA-Z0-9_]{3,}")) {
+            System.out.println("Username must contain at least 3 letters, numbers, or underscores.");
+            return;
+        }
+
+        for (Passenger p : passengers) {
+            if (p.getUsername().equalsIgnoreCase(username)) {
+                System.out.println("Username already exists.");
+                return;
+            }
+        }
+
+        System.out.print("Password: ");
+        String password = scanner.nextLine().trim();
+
+        if (password.length() < 4) {
+            System.out.println("Password must be at least 4 characters.");
+            return;
+        }
+
+        Passenger passenger = new Passenger(
+            nextPassengerId,
+            fullName,
+            username,
+            password
+        );
+
+        passengers.add(passenger);
+        nextPassengerId++;
+
+        System.out.println("Registration successful!");
     }
-}
-
-    System.out.print("Password: ");
-    String password = scanner.nextLine().trim();
-
-    if (password.length() < 4) {
-    System.out.println("Password must be at least 4 characters.");
-    return;
-}
-
-    
-
-    Passenger passenger = new Passenger(
-        nextPassengerId,
-        fullName,
-        username,
-        password
-    );
-
-    passengers.add(passenger);
-    nextPassengerId++;
-
-    System.out.println("Registration successful!");
-}
-
 }
