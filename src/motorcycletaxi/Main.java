@@ -84,8 +84,9 @@ private static int nextRideId = 1;
             System.out.println("Welcome, " + passenger.getFullName() + "!");
            System.out.println("1. Book a Ride");
             System.out.println("2. View Account Information");
-           System.out.println("3. View My Rides");
-            System.out.println("4. Logout");
+            System.out.println("3. View My Rides");
+            System.out.println("4. Cancel a Ride");
+            System.out.println("5. Logout");
             System.out.print("Choose: ");
 
             String choice = scanner.nextLine().trim();
@@ -100,10 +101,13 @@ private static int nextRideId = 1;
     viewMyRides(passenger);
 
 } else if (choice.equals("4")) {
+    cancelRide(passenger);
+
+} else if (choice.equals("5")) {
     System.out.println("Logging out...");
     break;
             } else {
-                System.out.println("Please choose 1, 2, , 3 or 4.");
+                System.out.println("Please choose 1, 2, , 3 , 4 or 5.");
             }
         }
     }
