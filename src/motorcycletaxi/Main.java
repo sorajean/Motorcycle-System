@@ -86,7 +86,7 @@ public class Main {
             String choice = scanner.nextLine().trim();
 
             if (choice.equals("1")) {
-                System.out.println("Ride booking is coming soon.");
+              bookRide();
 
             } else if (choice.equals("2")) {
              viewAccountInformation(passenger);
