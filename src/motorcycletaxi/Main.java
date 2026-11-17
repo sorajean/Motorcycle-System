@@ -112,10 +112,20 @@ public static void bookRide() {
     System.out.println("\n=== BOOK A RIDE ===");
 
     System.out.print("Enter pickup location: ");
-    String pickup = scanner.nextLine().trim();
+String pickup = scanner.nextLine().trim();
 
-    System.out.print("Enter destination: ");
-    String destination = scanner.nextLine().trim();
+if (pickup.isEmpty()) {
+    System.out.println("Pickup location cannot be empty.");
+    return;
+}
+
+System.out.print("Enter destination: ");
+String destination = scanner.nextLine().trim();
+
+if (destination.isEmpty()) {
+    System.out.println("Destination cannot be empty.");
+    return;
+}
 
     System.out.println("\nRide details:");
     System.out.println("Pickup: " + pickup);
