@@ -96,12 +96,14 @@ private static int nextRideId = 1;
             } else if (choice.equals("2")) {
              viewAccountInformation(passenger);
 
-            } else if (choice.equals("3")) {
-                System.out.println("Logging out...");
-                break;
+           } else if (choice.equals("3")) {
+    viewMyRides(passenger);
 
+} else if (choice.equals("4")) {
+    System.out.println("Logging out...");
+    break;
             } else {
-                System.out.println("Please choose 1, 2, or 3.");
+                System.out.println("Please choose 1, 2, , 3 or 4.");
             }
         }
     }
@@ -166,7 +168,7 @@ public static void viewMyRides(Passenger passenger) {
             System.out.println("Ride ID: " + ride.getId());
             System.out.println("Pickup: " + ride.getPickup());
             System.out.println("Destination: " + ride.getDestination());
-            System.out.println("Status: " + ride.getStatus());
+           System.out.println("Booking Owner ID: " + ride.getPassengerId());
 
             found = true;
         }
