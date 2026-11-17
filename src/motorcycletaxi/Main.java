@@ -77,6 +77,7 @@ private static int nextRideId = 1;
     // Passenger dashboard method
     public static void passengerDashboard(Passenger passenger) {
 
+        
         while (true) {
             System.out.println();
             System.out.println("=== PASSENGER DASHBOARD ===");
@@ -89,7 +90,7 @@ private static int nextRideId = 1;
             String choice = scanner.nextLine().trim();
 
             if (choice.equals("1")) {
-              bookRide();
+             bookRide(passenger);
 
             } else if (choice.equals("2")) {
              viewAccountInformation(passenger);
@@ -111,7 +112,7 @@ private static int nextRideId = 1;
     System.out.println("Username: " + passenger.getUsername());
 }
 
-public static void bookRide() {
+public static void bookRide(Passenger passenger) {
     System.out.println("\n=== BOOK A RIDE ===");
 
     System.out.print("Enter pickup location: ");
