@@ -82,9 +82,10 @@ private static int nextRideId = 1;
             System.out.println();
             System.out.println("=== PASSENGER DASHBOARD ===");
             System.out.println("Welcome, " + passenger.getFullName() + "!");
-            System.out.println("1. Book a Ride");
+           System.out.println("1. Book a Ride");
             System.out.println("2. View Account Information");
-            System.out.println("3. Logout");
+           System.out.println("3. View My Rides");
+            System.out.println("4. Logout");
             System.out.print("Choose: ");
 
             String choice = scanner.nextLine().trim();
