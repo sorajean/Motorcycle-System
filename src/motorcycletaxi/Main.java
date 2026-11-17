@@ -89,7 +89,7 @@ public class Main {
                 System.out.println("Ride booking is coming soon.");
 
             } else if (choice.equals("2")) {
-                System.out.println("Account information is coming soon.");
+             viewAccountInformation(passenger);
 
             } else if (choice.equals("3")) {
                 System.out.println("Logging out...");
@@ -106,6 +106,22 @@ public class Main {
     System.out.println("Passenger ID: " + passenger.getId());
     System.out.println("Full Name: " + passenger.getFullName());
     System.out.println("Username: " + passenger.getUsername());
+}
+
+public static void bookRide() {
+    System.out.println("\n=== BOOK A RIDE ===");
+
+    System.out.print("Enter pickup location: ");
+    String pickup = scanner.nextLine().trim();
+
+    System.out.print("Enter destination: ");
+    String destination = scanner.nextLine().trim();
+
+    System.out.println("\nRide details:");
+    System.out.println("Pickup: " + pickup);
+    System.out.println("Destination: " + destination);
+
+    System.out.println("Ride request created!");
 }
 
     // Passenger registration method
