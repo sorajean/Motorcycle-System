@@ -150,6 +150,32 @@ System.out.println("Your Ride ID: " + ride.getId());
 System.out.println("Status: " + ride.getStatus());
 }
 
+
+public static void viewMyRides(Passenger passenger) {
+
+    System.out.println("\n=== MY RIDE BOOKINGS ===");
+
+    boolean found = false;
+
+    for (Ride ride : rides) {
+
+        if (ride.getPassengerId() == passenger.getId()) {
+
+            System.out.println("--------------------------");
+            System.out.println("Ride ID: " + ride.getId());
+            System.out.println("Pickup: " + ride.getPickup());
+            System.out.println("Destination: " + ride.getDestination());
+            System.out.println("Status: " + ride.getStatus());
+
+            found = true;
+        }
+    }
+
+    if (!found) {
+        System.out.println("You have no ride bookings yet.");
+    }
+}
+
     // Passenger registration method
     public static void registerPassenger() {
 
