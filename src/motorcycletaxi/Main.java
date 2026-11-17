@@ -179,6 +179,58 @@ public static void viewMyRides(Passenger passenger) {
     }
 }
 
+public static void cancelRide(Passenger passenger) {
+
+    System.out.println("\n=== CANCEL RIDE ===");
+
+    boolean found = false;
+
+    for (Ride ride : rides) {
+
+        if (ride.getPassengerId() == passenger.getId()
+                && ride.getStatus().equals("BOOKED")) {
+
+            System.out.println("Ride ID: " + ride.getId());
+            System.out.println("Pickup: " + ride.getPickup());
+            System.out.println("Destination: " + ride.getDestination());
+            System.out.println("--------------------------");
+
+            found = true;
+        }
+    }
+
+    if (!found) {
+        System.out.println("You have no active bookings to cancel.");
+        return;
+    }
+
+    System.out.print("Enter Ride ID to cancel: ");
+
+    int rideId;
+
+    try {
+        rideId = Integer.parseInt(scanner.nextLine().trim());
+    } catch (NumberFormatException e) {
+        System.out.println("Invalid Ride ID.");
+        return;
+    }
+
+    for (Ride ride : rides) {
+
+        if (ride.getId() == rideId
+                && ride.getPassengerId() == passenger.getId()
+                && ride.getStatus().equals("BOOKED")) {
+
+            ride.setStatus("CANCELLED");
+
+            System.out.println("Ride cancelled successfully!");
+            return;
+        }
+    }
+
+    System.out.println("Ride not found or cannot be cancelled.");
+}
+
     // Passenger registration method
     public static void registerPassenger() {
 
