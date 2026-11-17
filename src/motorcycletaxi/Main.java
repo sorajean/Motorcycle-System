@@ -135,7 +135,17 @@ if (destination.isEmpty()) {
     System.out.println("Pickup: " + pickup);
     System.out.println("Destination: " + destination);
 
-    System.out.println("Ride request created!");
+    Ride ride = new Ride(
+    nextRideId,
+    passenger.getId(),
+    pickup,
+    destination
+);
+
+rides.add(ride);
+nextRideId++;
+
+System.out.println("Ride request created!");
 }
 
     // Passenger registration method
