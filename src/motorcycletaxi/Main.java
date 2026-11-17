@@ -145,7 +145,9 @@ if (destination.isEmpty()) {
 rides.add(ride);
 nextRideId++;
 
-System.out.println("Ride request created!");
+System.out.println("Ride request created successfully!");
+System.out.println("Your Ride ID: " + ride.getId());
+System.out.println("Status: " + ride.getStatus());
 }
 
     // Passenger registration method
