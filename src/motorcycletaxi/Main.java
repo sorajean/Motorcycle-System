@@ -67,6 +67,8 @@ public class Main {
         }
 
         System.out.println("Invalid username or password.");
+
+        
     }
 
     // Passenger dashboard method
@@ -98,6 +100,13 @@ public class Main {
             }
         }
     }
+
+    public static void viewAccountInformation(Passenger passenger) {
+    System.out.println("\n=== ACCOUNT INFORMATION ===");
+    System.out.println("Passenger ID: " + passenger.getId());
+    System.out.println("Full Name: " + passenger.getFullName());
+    System.out.println("Username: " + passenger.getUsername());
+}
 
     // Passenger registration method
     public static void registerPassenger() {
