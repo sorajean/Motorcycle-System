@@ -256,6 +256,11 @@ public static void registerDriver() {
     System.out.print("Motorcycle plate number: ");
     String motorcyclePlate = scanner.nextLine().trim();
 
+    if (motorcyclePlate.isEmpty()) {
+    System.out.println("Motorcycle plate number cannot be empty.");
+    return;
+}
+
     Driver driver = new Driver(
         nextDriverId,
         fullName,
