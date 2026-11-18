@@ -26,9 +26,10 @@ private static int nextDriverId = 1;
         while (true) {
             System.out.println();
             System.out.println("=== MOTORCYCLE TAXI BOOKING SYSTEM ===");
-            System.out.println("1. Login");
-            System.out.println("2. Register");
-            System.out.println("0. Exit");
+           System.out.println("1. Login");
+           System.out.println("2. Register Passenger");
+          System.out.println("3. Register Driver");
+          System.out.println("0. Exit");
             System.out.print("Choose: ");
 
             String choice = scanner.nextLine().trim();
