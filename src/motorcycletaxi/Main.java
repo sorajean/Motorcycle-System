@@ -261,6 +261,13 @@ public static void registerDriver() {
     return;
 }
 
+   for (Driver d : drivers) {
+    if (d.getMotorcyclePlate().equalsIgnoreCase(motorcyclePlate)) {
+        System.out.println("Motorcycle plate number already registered.");
+        return;
+    }
+}
+
     Driver driver = new Driver(
         nextDriverId,
         fullName,
