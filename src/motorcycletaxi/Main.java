@@ -248,6 +248,11 @@ public static void registerDriver() {
     System.out.print("Driver full name: ");
     String fullName = scanner.nextLine().trim();
 
+    if (fullName.isEmpty()) {
+    System.out.println("Driver name cannot be empty.");
+    return;
+}
+
     System.out.print("Motorcycle plate number: ");
     String motorcyclePlate = scanner.nextLine().trim();
 
