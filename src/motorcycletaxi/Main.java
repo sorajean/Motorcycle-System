@@ -43,6 +43,9 @@ private static int nextDriverId = 1;
             } else if (choice.equals("2")) {
                 registerPassenger();
 
+                } else if (choice.equals("3")) {
+                registerDriver();
+
             } else {
                 System.out.println("Please choose 0, 1, or 2.");
             }
