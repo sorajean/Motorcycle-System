@@ -39,5 +39,14 @@ public class Ride {
 
     public void setStatus(String status) {
         this.status = status;
+
+        
     }
+    public double getFare() {
+    return fare;
+}
+
+public void setFare(double fare) {
+    this.fare = fare;
+}
 }
