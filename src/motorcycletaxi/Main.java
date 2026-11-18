@@ -237,6 +237,28 @@ public static void cancelRide(Passenger passenger) {
     System.out.println("Ride not found or cannot be cancelled.");
 }
 
+public static void registerDriver() {
+
+    System.out.println("\n=== DRIVER REGISTRATION ===");
+
+    System.out.print("Driver full name: ");
+    String fullName = scanner.nextLine().trim();
+
+    System.out.print("Motorcycle plate number: ");
+    String motorcyclePlate = scanner.nextLine().trim();
+
+    Driver driver = new Driver(
+        nextDriverId,
+        fullName,
+        motorcyclePlate
+    );
+
+    drivers.add(driver);
+    nextDriverId++;
+
+    System.out.println("Driver registered successfully!");
+}
+
     // Passenger registration method
     public static void registerPassenger() {
 
