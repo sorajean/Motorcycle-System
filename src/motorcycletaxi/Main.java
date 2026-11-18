@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import motorcycletaxi.model.Passenger;
 import motorcycletaxi.model.Ride;
+import motorcycletaxi.model.Driver;
 
 public class Main {
 
@@ -13,7 +14,8 @@ public class Main {
     private static ArrayList<Passenger> passengers = new ArrayList<>();
     private static int nextPassengerId = 1;
     private static ArrayList<Ride> rides = new ArrayList<>();
-private static int nextRideId = 1;
+    private static ArrayList<Driver> drivers = new ArrayList<>();
+    private static int nextDriverId = 1;
 
     public static void main(String[] args) {
 
