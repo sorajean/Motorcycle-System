@@ -171,6 +171,14 @@ System.out.println("Your Ride ID: " + ride.getId());
 System.out.println("Status: " + ride.getStatus());
 }
 
+public static double calculateFare(double distance) {
+
+    double baseFare = 30.00;
+    double farePerKilometer = 15.00;
+
+    return baseFare + (distance * farePerKilometer);
+}
+
 
 public static void viewMyRides(Passenger passenger) {
 
