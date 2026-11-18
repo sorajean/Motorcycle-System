@@ -178,13 +178,22 @@ try {
     passenger.getId(),
     pickup,
     destination
+
+    
 );
+
+double fare = calculateFare(distance);
+ride.setFare(fare);
 
 rides.add(ride);
 nextRideId++;
 
 System.out.println("Ride request created successfully!");
 System.out.println("Your Ride ID: " + ride.getId());
+System.out.println("Pickup: " + ride.getPickup());
+System.out.println("Destination: " + ride.getDestination());
+System.out.println("Distance: " + distance + " km");
+System.out.printf("Estimated Fare: PHP %.2f%n", ride.getFare());
 System.out.println("Status: " + ride.getStatus());
 }
 
