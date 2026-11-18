@@ -29,6 +29,7 @@ private static int nextDriverId = 1;
            System.out.println("1. Login");
            System.out.println("2. Register Passenger");
           System.out.println("3. Register Driver");
+           System.out.println("4. View Registered Drivers");
           System.out.println("0. Exit");
             System.out.print("Choose: ");
 
@@ -46,8 +47,11 @@ private static int nextDriverId = 1;
                 } else if (choice.equals("3")) {
                 registerDriver();
 
+                } else if (choice.equals("4")) {
+    viewDrivers();
+
             } else {
-                System.out.println("Please choose 0, 1, or 2.");
+                System.out.println("Please choose 0, 1, 3, or 4.");
             }
         }
 
