@@ -152,6 +152,23 @@ if (destination.isEmpty()) {
     return;
 }
 
+System.out.print("Enter estimated distance in kilometers: ");
+
+double distance;
+
+try {
+    distance = Double.parseDouble(scanner.nextLine().trim());
+
+    if (distance <= 0) {
+        System.out.println("Distance must be greater than zero.");
+        return;
+    }
+
+} catch (NumberFormatException e) {
+    System.out.println("Please enter a valid distance.");
+    return;
+}
+
     System.out.println("\nRide details:");
     System.out.println("Pickup: " + pickup);
     System.out.println("Destination: " + destination);
