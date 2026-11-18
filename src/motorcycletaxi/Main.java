@@ -284,6 +284,26 @@ public static void registerDriver() {
     System.out.println("Driver registered successfully!");
 }
 
+public static void viewDrivers() {
+
+    System.out.println("\n=== REGISTERED DRIVERS ===");
+
+    if (drivers.isEmpty()) {
+        System.out.println("No drivers registered yet.");
+        return;
+    }
+
+    for (Driver driver : drivers) {
+
+        System.out.println("--------------------------");
+        System.out.println("Driver ID: " + driver.getId());
+        System.out.println("Full Name: " + driver.getFullName());
+        System.out.println("Motorcycle Plate: " + driver.getMotorcyclePlate());
+        System.out.println("Availability: "
+                + (driver.isAvailable() ? "Available" : "Unavailable"));
+    }
+}
+
     // Passenger registration method
     public static void registerPassenger() {
 
