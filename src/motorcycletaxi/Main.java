@@ -30,6 +30,7 @@ private static int nextDriverId = 1;
            System.out.println("2. Register Passenger");
           System.out.println("3. Register Driver");
            System.out.println("4. View Registered Drivers");
+           System.out.println("5. View All Rides");
           System.out.println("0. Exit");
             System.out.print("Choose: ");
 
@@ -49,6 +50,9 @@ private static int nextDriverId = 1;
 
                 } else if (choice.equals("4")) {
     viewDrivers();
+    
+    } else if (choice.equals("5")) {
+    viewAllRides();
 
             } else {
                 System.out.println("Please choose 0, 1, 3, or 4.");
@@ -472,6 +476,25 @@ public static Driver findAvailableDriver() {
     }
 
     return null;
+}
+
+// View all registered rides
+public static void viewAllRides() {
+
+    System.out.println("\n=== ALL RIDE BOOKINGS ===");
+
+    if (rides.isEmpty()) {
+        System.out.println("No ride bookings found.");
+        return;
+    }
+
+    for (Ride ride : rides) {
+
+        System.out.println("--------------------------");
+        System.out.println("Ride ID: " + ride.getId());
+        System.out.println("Passenger ID: " + ride.getPassengerId());
+        System.out.println("Status: " + ride.getStatus());
+    }
 }
     // Passenger registration method
     public static void registerPassenger() {
