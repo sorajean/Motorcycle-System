@@ -169,6 +169,14 @@ try {
     return;
 }
 
+// Find an available driver
+Driver assignedDriver = findAvailableDriver();
+
+if (assignedDriver == null) {
+    System.out.println("Sorry, no available drivers at the moment.");
+    return;
+}
+
     System.out.println("\nRide details:");
     System.out.println("Pickup: " + pickup);
     System.out.println("Destination: " + destination);
@@ -179,9 +187,13 @@ try {
     passenger.getId(),
     pickup,
     destination
+    
 
     
 );
+
+// Assign selected driver to the ride
+ride.setDriverId(assignedDriver.getId());
 
 double fare = calculateFare(distance);
 ride.setFare(fare);
@@ -196,6 +208,8 @@ System.out.println("Destination: " + ride.getDestination());
 System.out.println("Distance: " + distance + " km");
 System.out.printf("Estimated Fare: PHP %.2f%n", ride.getFare());
 System.out.println("Status: " + ride.getStatus());
+System.out.println("Assigned Driver: " + assignedDriver.getFullName());
+System.out.println("Motorcycle Plate: " + assignedDriver.getMotorcyclePlate());
 }
 
 public static double calculateFare(double distance) {
