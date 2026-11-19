@@ -8,6 +8,7 @@ public class Ride {
     private String destination;
     private String status;
     private double fare;
+    private int driverId;
 
     public Ride(int id, int passengerId, String pickup, String destination) {
         this.id = id;
