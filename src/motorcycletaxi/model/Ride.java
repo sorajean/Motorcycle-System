@@ -50,4 +50,11 @@ public class Ride {
 public void setFare(double fare) {
     this.fare = fare;
 }
+public int getDriverId() {
+    return driverId;
+}
+
+public void setDriverId(int driverId) {
+    this.driverId = driverId;
+}
 }
