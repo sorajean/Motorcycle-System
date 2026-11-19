@@ -345,6 +345,18 @@ public static void viewDrivers() {
     }
 }
 
+// Find an available driver
+public static Driver findAvailableDriver() {
+
+    for (Driver driver : drivers) {
+
+        if (driver.isAvailable()) {
+            return driver;
+        }
+    }
+
+    return null;
+}
     // Passenger registration method
     public static void registerPassenger() {
 
