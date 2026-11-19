@@ -243,6 +243,18 @@ public static void viewMyRides(Passenger passenger) {
            System.out.println("Fare: PHP " + ride.getFare());
            System.out.println("Status: " + ride.getStatus());
 
+           // Display assigned driver information
+for (Driver driver : drivers) {
+
+    if (driver.getId() == ride.getDriverId()) {
+
+        System.out.println("Assigned Driver: " + driver.getFullName());
+        System.out.println("Motorcycle Plate: " + driver.getMotorcyclePlate());
+
+        break;
+    }
+}
+
             found = true;
         }
     }
