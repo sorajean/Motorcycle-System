@@ -99,8 +99,9 @@ private static int nextDriverId = 1;
            System.out.println("1. Book a Ride");
             System.out.println("2. View Account Information");
             System.out.println("3. View My Rides");
-            System.out.println("4. Cancel a Ride");
-            System.out.println("5. Logout");
+          System.out.println("4. Cancel a Ride");
+          System.out.println("5. Complete a Ride");
+          System.out.println("6. Logout");
             System.out.print("Choose: ");
 
             String choice = scanner.nextLine().trim();
@@ -118,6 +119,9 @@ private static int nextDriverId = 1;
     cancelRide(passenger);
 
 } else if (choice.equals("5")) {
+    completeRide(passenger);
+
+} else if (choice.equals("6")) {
     System.out.println("Logging out...");
     break;
             } else {
@@ -330,6 +334,62 @@ return;
     }
 
     System.out.println("Ride not found or cannot be cancelled.");
+}
+
+// Complete a passenger ride
+public static void completeRide(Passenger passenger) {
+
+    System.out.println("\n=== COMPLETE RIDE ===");
+
+    boolean found = false;
+
+    // Display passenger's active rides
+    for (Ride ride : rides) {
+
+        if (ride.getPassengerId() == passenger.getId()
+                && ride.getStatus().equals("BOOKED")) {
+
+            System.out.println("--------------------------");
+            System.out.println("Ride ID: " + ride.getId());
+            System.out.println("Pickup: " + ride.getPickup());
+            System.out.println("Destination: " + ride.getDestination());
+
+            found = true;
+        }
+    }
+
+    if (!found) {
+        System.out.println("You have no active rides to complete.");
+        return;
+    }
+
+    System.out.print("Enter Ride ID to complete: ");
+
+    int rideId;
+
+    try {
+        rideId = Integer.parseInt(scanner.nextLine().trim());
+
+    } catch (NumberFormatException e) {
+        System.out.println("Invalid Ride ID.");
+        return;
+    }
+
+    // Find and complete selected ride
+    for (Ride ride : rides) {
+
+        if (ride.getId() == rideId
+                && ride.getPassengerId() == passenger.getId()
+                && ride.getStatus().equals("BOOKED")) {
+
+            ride.setStatus("COMPLETED");
+
+            System.out.println("Ride completed successfully!");
+            return;
+        }
+    }
+
+    System.out.println("Ride not found or cannot be completed.");
 }
 
 public static void registerDriver() {
