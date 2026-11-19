@@ -312,10 +312,20 @@ public static void cancelRide(Passenger passenger) {
                 && ride.getPassengerId() == passenger.getId()
                 && ride.getStatus().equals("BOOKED")) {
 
-            ride.setStatus("CANCELLED");
+           ride.setStatus("CANCELLED");
 
-            System.out.println("Ride cancelled successfully!");
-            return;
+// Make the assigned driver available again
+for (Driver driver : drivers) {
+
+    if (driver.getId() == ride.getDriverId()) {
+
+        driver.setAvailable(true);
+        break;
+    }
+}
+
+System.out.println("Ride cancelled successfully!");
+return;
         }
     }
 
