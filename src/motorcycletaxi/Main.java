@@ -199,6 +199,10 @@ double fare = calculateFare(distance);
 ride.setFare(fare);
 
 rides.add(ride);
+
+// Mark assigned driver as unavailable
+assignedDriver.setAvailable(false);
+
 nextRideId++;
 
 System.out.println("Ride request created successfully!");
