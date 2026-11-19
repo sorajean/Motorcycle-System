@@ -223,6 +223,7 @@ public static void viewMyRides(Passenger passenger) {
             System.out.println("Destination: " + ride.getDestination());
            System.out.println("Booking Owner ID: " + ride.getPassengerId());
            System.out.println("Fare: PHP " + ride.getFare());
+           System.out.println("Status: " + ride.getStatus());
 
             found = true;
         }
