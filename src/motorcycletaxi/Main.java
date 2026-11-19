@@ -479,6 +479,7 @@ public static Driver findAvailableDriver() {
 }
 
 // View all registered rides
+// View all registered rides with complete details
 public static void viewAllRides() {
 
     System.out.println("\n=== ALL RIDE BOOKINGS ===");
@@ -490,11 +491,50 @@ public static void viewAllRides() {
 
     for (Ride ride : rides) {
 
-        System.out.println("--------------------------");
+        System.out.println("\n--------------------------");
+
         System.out.println("Ride ID: " + ride.getId());
         System.out.println("Passenger ID: " + ride.getPassengerId());
+
+        // Find passenger name
+        for (Passenger passenger : passengers) {
+
+            if (passenger.getId() == ride.getPassengerId()) {
+
+                System.out.println("Passenger Name: " + passenger.getFullName());
+                break;
+            }
+        }
+
+        System.out.println("Pickup: " + ride.getPickup());
+        System.out.println("Destination: " + ride.getDestination());
+
+        System.out.printf("Fare: PHP %.2f%n", ride.getFare());
+
         System.out.println("Status: " + ride.getStatus());
+
+        // Find assigned driver
+        boolean driverFound = false;
+
+        for (Driver driver : drivers) {
+
+            if (driver.getId() == ride.getDriverId()) {
+
+                System.out.println("Driver ID: " + driver.getId());
+                System.out.println("Driver Name: " + driver.getFullName());
+                System.out.println("Motorcycle Plate: " + driver.getMotorcyclePlate());
+
+                driverFound = true;
+                break;
+            }
+        }
+
+        if (!driverFound) {
+            System.out.println("Assigned Driver: Not found");
+        }
     }
+
+    System.out.println("--------------------------");
 }
     // Passenger registration method
     public static void registerPassenger() {
