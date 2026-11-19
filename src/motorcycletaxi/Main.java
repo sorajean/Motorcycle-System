@@ -177,6 +177,12 @@ if (assignedDriver == null) {
     return;
 }
 
+// Double-check driver availability
+if (!assignedDriver.isAvailable()) {
+    System.out.println("Selected driver is no longer available.");
+    return;
+}
+
     System.out.println("\nRide details:");
     System.out.println("Pickup: " + pickup);
     System.out.println("Destination: " + destination);
