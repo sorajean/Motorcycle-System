@@ -382,9 +382,19 @@ public static void completeRide(Passenger passenger) {
                 && ride.getPassengerId() == passenger.getId()
                 && ride.getStatus().equals("BOOKED")) {
 
-            ride.setStatus("COMPLETED");
+           ride.setStatus("COMPLETED");
 
-            System.out.println("Ride completed successfully!");
+// Make assigned driver available again
+for (Driver driver : drivers) {
+
+    if (driver.getId() == ride.getDriverId()) {
+
+        driver.setAvailable(true);
+        break;
+    }
+}
+
+System.out.println("Ride completed successfully!");
             return;
         }
     }
