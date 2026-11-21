@@ -1,17 +1,17 @@
-
 package motorcycletaxi.model;
 
 public class Driver {
-
     private int id;
-    private String fullName;
-    private String motorcyclePlate;
+    private String name;
+    private String plateNumber;
+    private Location baseLocation;
     private boolean available;
 
-    public Driver(int id, String fullName, String motorcyclePlate) {
+    public Driver(int id, String name, String plateNumber, Location baseLocation) {
         this.id = id;
-        this.fullName = fullName;
-        this.motorcyclePlate = motorcyclePlate;
+        this.name = name;
+        this.plateNumber = plateNumber;
+        this.baseLocation = baseLocation;
         this.available = true;
     }
 
@@ -19,12 +19,16 @@ public class Driver {
         return id;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getName() {
+        return name;
     }
 
-    public String getMotorcyclePlate() {
-        return motorcyclePlate;
+    public String getPlateNumber() {
+        return plateNumber;
+    }
+
+    public Location getBaseLocation() {
+        return baseLocation;
     }
 
     public boolean isAvailable() {
