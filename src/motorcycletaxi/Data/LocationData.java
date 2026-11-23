@@ -1,4 +1,4 @@
-package motorcycletaxi.data;
+package motorcycletaxi.Data;
 
 import java.util.ArrayList;
 import java.util.Arrays;
